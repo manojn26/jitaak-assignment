@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { loginUser } from '../redux/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPasswordEmailInput = () => {
     const [email, setEmail] = useState('');
     //   const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // dispatch(loginUser({ email, password }));
     };
+
+    const navigatePasswordSetPage = () => {
+        navigate("/otp-verify")
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -28,6 +34,7 @@ const ForgotPasswordEmailInput = () => {
                         />
                     </div>
                     <button
+                        onClick={navigatePasswordSetPage}
                         type="submit"
                         className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring focus:ring-yellow-300"
                     >

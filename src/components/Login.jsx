@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { loginUser } from '../redux/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     //   const dispatch = useDispatch();
 
+    const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // dispatch(loginUser({ email, password }));
     };
+
+    const navigateEmailSentPage = () => {
+        navigate("/forgot-password-email")
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -41,7 +48,7 @@ const Login = () => {
                     </div>
 
                     <div>
-                        <p>Forgot Password?</p>
+                        <p onClick={navigateEmailSentPage} className='mb-5 mt-[-15px] cursor-pointer text-blue-500'>Forgot Password?</p>
                     </div>
 
                     <button
