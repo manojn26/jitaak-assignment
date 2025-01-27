@@ -3,7 +3,9 @@ import Login from "./components/Login";
 import OtpInput from "./components/OtpInput";
 import Register from "./components/Register";
 import SetNewPassword from "./components/SetNewPassword";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -18,6 +20,15 @@ function App() {
           />
           <Route path='/otp-verify' element={<OtpInput />} />
           <Route path='/set-new-password' element={<SetNewPassword />} />
+          <Route
+            path='/dashboard'
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='*' element={<Navigate to='/login' replace />} />
         </Routes>
       </BrowserRouter>
     </>

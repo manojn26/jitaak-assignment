@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const OtpInput = ({ length = 4, onOtpSubmit = () => { } }) => {
   const [otp, setOtp] = useState(new Array(length).fill(""));
   const inputRefs = useRef([]);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (inputRefs.current[0]) {
@@ -56,7 +59,14 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => { } }) => {
   };
 
   const submitHandler = () => {
-    console.log(otp.join(""));
+    const userEnteredOTP = otp.join("");
+    console.log(typeof userEnteredOTP);
+
+    if (userEnteredOTP === "4578") {
+      navigate("/dashboard");
+    }
+    return;
+
 
   }
 

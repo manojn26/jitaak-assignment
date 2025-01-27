@@ -23,7 +23,7 @@ const Register = () => {
         const message = checkValidSignUpData(email, password);
         setErrorMessage(message);
 
-        if (errorMessage) return null;
+        if (errorMessage) return;
         // console.log(email, password);
 
         // Firebase Signup Logic
