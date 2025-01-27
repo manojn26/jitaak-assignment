@@ -56,7 +56,7 @@ const ForgotPasswordEmailInput = () => {
                         type="submit"
                         className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring focus:ring-yellow-300"
                     >
-                        ログイン
+                        Submit
                     </button>
                 </form>
             </div>

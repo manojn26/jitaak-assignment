@@ -5,18 +5,18 @@ const Dashboard = () => {
         <div className="flex h-screen bg-gray-100">
             {/* Sidebar */}
             <aside className="w-64 bg-orange-100 p-4">
-                <h1 className="text-xl font-bold text-orange-600 mb-6">ルックミール</h1>
+                <h1 className="text-xl font-bold text-orange-600 mb-6">look meal</h1>
                 <nav>
                     <ul className="space-y-4">
-                        <li className="text-orange-600 font-semibold">ダッシュボード</li>
+                        <li className="text-orange-600 font-semibold">dashboard</li>
                         <li className="text-gray-700 hover:text-orange-600 cursor-pointer">
-                            登録ユーザー
+                            registered user
                         </li>
                         <li className="text-gray-700 hover:text-orange-600 cursor-pointer">
-                            当選者
+                            Winner
                         </li>
                         <li className="text-gray-700 hover:text-orange-600 cursor-pointer">
-                            運営管理者
+                            Operations manager
                         </li>
                     </ul>
                 </nav>
@@ -26,19 +26,19 @@ const Dashboard = () => {
             <main className="flex-1 p-6">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-700">ダッシュボード</h2>
+                    <h2 className="text-2xl font-semibold text-gray-700">dashboard</h2>
                     <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
                 </div>
 
                 {/* Metrics Cards */}
                 <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
                     {[
-                        { label: "ユーザー登録数累計", value: "450人", change: "12.5%" },
-                        { label: "アクティブユーザー", value: "50人/月", change: "316.6%" },
-                        { label: "定着率", value: "10%/前月", change: "-16.6%" },
-                        { label: "平均検索回数", value: "4回/月", change: "100%" },
-                        { label: "抽選利用回数", value: "125回/月", change: "47%" },
-                        { label: "アカウント削除数", value: "10人/月", change: "25%" },
+                        { label: "Cumulative number of user registrations", value: "450 people", change: "12.5%" },
+                        { label: "active user", value: "50 people/month", change: "316.6%" },
+                        { label: "Retention rate", value: "10%/previous month", change: "-16.6%" },
+                        { label: "Average number of searches", value: "4 times/month", change: "100%" },
+                        { label: "Number of lottery uses", value: "125 times/month", change: "47%" },
+                        { label: "Number of account deletions", value: "10 people/month", change: "25%" },
                     ].map((card, index) => (
                         <div
                             key={index}
@@ -56,14 +56,14 @@ const Dashboard = () => {
                     ))}
                 </div>
 
-                {/* Chart Section */}
+                {/* Chart Section 
                 <div className="bg-white shadow-lg rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-4">性別・年代比</h3>
+                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Gender/age ratio</h3>
                     <div className="w-full h-64 bg-orange-100 rounded-lg flex items-center justify-center">
-                        {/* Placeholder for Chart */}
+                        Placeholder for Chart 
                         <span className="text-gray-500">Chart Placeholder</span>
                     </div>
-                </div>
+                </div>*/}
             </main>
         </div>
     );

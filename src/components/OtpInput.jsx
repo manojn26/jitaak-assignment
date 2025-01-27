@@ -63,7 +63,7 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => { } }) => {
     console.log(typeof userEnteredOTP);
 
     if (userEnteredOTP === "4578") {
-      navigate("/dashboard");
+      navigate("/set-new-password");
     }
     return;
 
@@ -74,11 +74,13 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => { } }) => {
     <>
 
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
+
         <div className="bg-white p-6 rounded shadow-md w-96">
+          <h2 className="text-2xl font-bold mb-6 text-center">Enter OTP</h2>
           <div >
             {otp.map((value, index) => {
               return (
-                <div className="inline m-5">
+                <div className="inline m-5" key={index}>
                   <input
                     className="w-10 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-yellow-300"
                     key={index}

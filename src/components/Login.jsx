@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
-import { checkValidSignInData } from '../utils/validate';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { checkValidEmailPassword } from '../utils/validate';
 import { auth } from '../utils/firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,7 +20,7 @@ const Login = () => {
         // dispatch(loginUser({ email, password }));
 
         // Validating Form Data
-        const message = checkValidSignInData(email, password);
+        const message = checkValidEmailPassword(email, password)
         setErrorMessage(message);
 
         if (errorMessage) return;
@@ -91,7 +91,7 @@ const Login = () => {
                         type="submit"
                         className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring focus:ring-yellow-300"
                     >
-                        ログイン
+                        Submit
                     </button>
                 </form>
             </div>

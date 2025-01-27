@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
-import { checkValidSignUpData } from '../utils/validate';
+import { checkValidEmailPassword } from '../utils/validate';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from "../utils/firebaseConfig"
 import { useDispatch } from 'react-redux';
@@ -20,7 +20,7 @@ const Register = () => {
         // dispatch(loginUser({ email, password }));
 
         // Validating Form Data
-        const message = checkValidSignUpData(email, password);
+        const message = checkValidEmailPassword(email, password);
         setErrorMessage(message);
 
         if (errorMessage) return;
@@ -88,7 +88,7 @@ const Register = () => {
                         type="submit"
                         className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring focus:ring-yellow-300"
                     >
-                        ログイン
+                        Submit
                     </button>
                 </form>
             </div>
